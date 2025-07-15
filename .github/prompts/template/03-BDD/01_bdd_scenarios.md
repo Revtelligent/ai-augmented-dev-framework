@@ -1,6 +1,6 @@
 <context> 
 **Product Requirements Document (PRD):**
-[Paste your complete PRD output here - include all sections: user stories, acceptance criteria, technical requirements, API specifications, data models, and success metrics]
+[[Paste your complete PRD output here - include all sections: user stories, acceptance criteria, technical requirements, API specifications, data models, and success metrics]]
 
 </context>
 <role>

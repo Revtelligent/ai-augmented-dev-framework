@@ -1,12 +1,12 @@
 <context>
 **PRD Foundation from Step 1:**
-[Paste the complete output from Step 1, including Problem Statement, Proposed Solution Overview, and Goals & Success Metrics]
+[[Paste the complete output from Step 1, including Problem Statement, Proposed Solution Overview, and Goals & Success Metrics]]
 
 **User Stories from Step 2:**
-[Paste the complete User Stories section from Step 2, including all user stories and their acceptance criteria]
+[[Paste the complete User Stories section from Step 2, including all user stories and their acceptance criteria]]
 
 **Product Red Team Analysis from Step 3:**
-[Paste the key risks and recommended actions from Step 3 that might impact functional requirements]
+[[Paste the key risks and recommended actions from Step 3 that might impact functional requirements]]
 
 ### Constraints
 

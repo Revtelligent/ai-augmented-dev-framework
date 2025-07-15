@@ -3,7 +3,7 @@
 We have completed our AI-powered ideation and validation phase (Stage 1) and have consolidated our findings into a comprehensive feature brief. Below is the complete feature brief that contains our strategic analysis, user insights, and implementation considerations:
 
 **Complete Feature Brief:**
-[Paste your entire feature brief output here - including Executive Summary, Problem Statement, Solution Overview, Target User & Use Case, Success Metrics, Implementation Considerations, Competitive Context, and Next Steps]
+[[Paste your entire feature brief output here - including Executive Summary, Problem Statement, Solution Overview, Target User & Use Case, Success Metrics, Implementation Considerations, Competitive Context, and Next Steps]]
 
 </context>
 <role>
