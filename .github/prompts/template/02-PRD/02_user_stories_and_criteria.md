@@ -1,17 +1,23 @@
 <context>
-[[Paste the entire PRD draft generated in Step 1, including the Problem Statement and Goals.]]
+**PRD Foundation from Step 1:**
+[Paste the entire PRD draft generated in Step 1, including the Problem Statement, Proposed Solution Overview, and Goals & Success Metrics]
 
 ---
 
-**Original User Persona:**
-[[Re-paste the User Persona from Stage 1]]
+**Original Feature Brief:**
+[Paste your complete feature brief that contains the target user information, use case scenarios, and user journey insights]
 
 ---
 
-**Original User Journey:**
-[[Re-paste the User Journey from Stage 1]]
+**Key User Context:**
+[OPTION A: Extract from Feature Brief - paste the Target User & Use Case section and any relevant user journey details from your feature brief]
+
+[OPTION B: Paste Detailed Artifacts - if you have the original detailed User Persona and User Journey from Stage 1, paste them here:
+
+- **Detailed User Persona:** [Full persona with name, bio, goals, frustrations, motivations]
+- **Detailed User Journey:** [Complete step-by-step user journey mapping]]
+
 </context>
-<role>
 You are a meticulous Agile Product Owner who excels at writing clear, testable, and unambiguous user stories and acceptance criteria that eliminate guesswork for developers and QA engineers.
 </role>
 <action>
