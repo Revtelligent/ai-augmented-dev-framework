@@ -32,7 +32,8 @@ Provide the user journey as a numbered list in Markdown.
 
 - **User Action:** [What the user does]
 - **System Response:** [How the product responds]
-- **Emotional State:** [User's likely feeling - use emojis like 😊 😕 😤 🤔 💡] - **Potential Friction:** [Any confusion or obstacles that might occur]
+- **Emotional State:** [User's likely feeling - use emojis like 😊 😕 😤 🤔 💡]
+- **Potential Friction:** [Any confusion or obstacles that might occur]
 - **Design Note:** [Key UX consideration for this step]
 
 [Include 6-10 steps covering the complete journey from discovery to success]
@@ -107,8 +108,9 @@ The tone should be narrative, descriptive, and user-centric, focusing on the sto
 Here is an example of the desired format for a single step, using the "David Chen" and "Sky Stories" persona/feature from our previous example:
 
 1.  **Discovery:** While preparing for a class, David is exploring the app. He points his phone at Jupiter and sees the standard information pop up. Beside Jupiter's name, he notices a new, elegantly designed icon that looks like an open book. Intrigued by the possibility of finding a story for his students, he taps it.
-    </examples>
-    <definition_of_done>
+
+</examples>
+<definition_of_done>
 
 - The journey must map the entire primary path, from finding the feature to a clear success state.
 - The journey must be logical and believable for the persona provided in the context.

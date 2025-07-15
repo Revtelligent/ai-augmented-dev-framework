@@ -1,5 +1,5 @@
 <context>
-Below is the complete output from our AI-powered ideation process:
+Below is the complete output from our ideation process:
 
 **Pain Point Analysis (Step 1):**
 [[Paste the prioritized pain points analysis from Step 1, including the top 3-5 critical pain points with their descriptions, business impact, and opportunity sizing.]]

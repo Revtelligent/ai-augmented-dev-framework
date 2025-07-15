@@ -31,7 +31,7 @@ This stage transforms a rough product idea into a validated, documented foundati
 
 **Goal**: Identify strategic market gaps and opportunities
 **AI Role**: Competitive analysis and market research
-**Output**: `market-analysis.md`
+**Output**: `problem_exploration.md`
 **Time**: 30-45 minutes
 
 ### Step 2: Generate Feature Ideas

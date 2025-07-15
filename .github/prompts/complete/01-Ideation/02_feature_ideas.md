@@ -1,4 +1,6 @@
 <context>
+## Pain Point Analysis
+
 ### 1. Lack of Time for Complex Games
 
 **Description:** Many working professionals struggle to find time for games that require significant learning or time investment. They need quick, engaging activities that fit into their busy schedules.

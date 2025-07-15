@@ -1,4 +1,6 @@
 <context>
+## Pain Point Analysis
+
 [[Paste the entire "Pain Point Analysis" output from the previous step here. This should be the list of prioritized pain points, each with a Description, Why it matters, and Opportunity Size.]]
 
 Additional context about our competitive landscape:
