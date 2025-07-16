@@ -74,19 +74,6 @@ export default function HomePage() {
           </p>
         </div>
 
-        {/* Quick Play Banner */}
-        <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200 mb-8">
-          <CardHeader>
-            <div className="flex items-center gap-2">
-              <Zap className="h-6 w-6 text-blue-600" />
-              <CardTitle className="text-2xl">Quick Play Mode</CardTitle>
-            </div>
-            <CardDescription className="text-lg">
-              Choose your challenge and start your 5-minute mental break
-            </CardDescription>
-          </CardHeader>
-        </Card>
-
         {/* Challenges Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {challenges.map((challenge) => (
