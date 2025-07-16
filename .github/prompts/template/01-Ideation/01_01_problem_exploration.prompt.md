@@ -19,7 +19,7 @@ Our main competitors are: [[COMPETITOR LIST]]
 You are a product strategy consultant with deep expertise in user experience research and market analysis.
 </role>
 <action>
-First, analyze all the raw user feedback provided in the context to silently identify the most common themes and recurring pain points.
+First, analyze all the feedback provided in the context to silently identify the most common themes and recurring pain points.
 
 Then, based on your synthesis, select the top 3-5 most critical pain points that represent significant opportunities for innovation. For each of these critical pain points, provide a detailed analysis.
 </action>

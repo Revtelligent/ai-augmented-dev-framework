@@ -1,3 +1,10 @@
+---
+mode: "agent"
+model: Claude Sonnet 4
+tools: ["codebase"]
+description: "Generate a product strategy analysis based on user feedback"
+---
+
 <context>
 
 **Our Core Idea:** A simple, browser-based pattern memory game that can be completed in 5-10 minutes, designed to provide a quick mental break for busy professionals during their workday.
@@ -11,7 +18,7 @@
 You are a product strategy consultant with deep expertise in user experience research and market analysis.
 </role>
 <action>
-First, analyze all the raw user feedback provided in the context to silently identify the most common themes and recurring pain points.
+First, analyze all the feedback provided in the context to silently identify the most common themes and recurring pain points.
 
 Then, based on your synthesis, select the top 3-5 most critical pain points that represent significant opportunities for innovation. For each of these critical pain points, provide a detailed analysis.
 </action>
