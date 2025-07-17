@@ -6,7 +6,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Clock, Brain, Zap } from 'lucide-react'
-import { QuickPlayBanner } from '@/components/quick-play/QuickPlayBanner'
 import { logBannerInteraction } from '@/lib/analytics'
 
 interface Challenge {
@@ -105,14 +104,6 @@ export default function HomePage({ user, systemLoad }: HomePageProps) {
           </p>
         </div>
 
-        {/* Quick Play Banner */}
-        <div className="mb-12">
-          <QuickPlayBanner
-            onTryNow={handleTryNow}
-            onDirectAccess={handleDirectAccess}
-            hasCompletedTutorial={user?.hasCompletedTutorial || false}
-          />
-        </div>
 
         {/* Challenges Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
