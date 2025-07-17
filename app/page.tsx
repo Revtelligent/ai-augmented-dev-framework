@@ -1,10 +1,13 @@
 "use client"
 
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Clock, Brain, Zap } from 'lucide-react'
+import { QuickPlayBanner } from '@/components/quick-play/QuickPlayBanner'
+import { logBannerInteraction } from '@/lib/analytics'
 
 interface Challenge {
   id: string
@@ -19,9 +22,19 @@ interface Challenge {
   }
 }
 
-export default function HomePage() {
+interface HomePageProps {
+  user?: {
+    hasCompletedTutorial: boolean;
+  };
+  systemLoad?: {
+    concurrentUsers: number;
+  };
+}
+
+export default function HomePage({ user, systemLoad }: HomePageProps) {
   const [challenges, setChallenges] = useState<Challenge[]>([])
   const [loading, setLoading] = useState(true)
+  const router = useRouter()
 
   useEffect(() => {
     fetchChallenges()
@@ -30,16 +43,34 @@ export default function HomePage() {
   const fetchChallenges = async () => {
     try {
       const response = await fetch('/api/challenges')
+      if (!response.ok) throw new Error('Failed to fetch challenges')
       const data = await response.json()
-      setChallenges(data.challenges)
+      setChallenges(data.challenges || [])
     } catch (error) {
       console.error('Error fetching challenges:', error)
+      setChallenges([])
     } finally {
       setLoading(false)
     }
   }
 
-  const getDifficultyColor = (difficulty: string) => {
+  const handleTryNow = () => {
+    logBannerInteraction({
+      action: "try_now_clicked",
+      source: "home_banner",
+      timestamp: Date.now(),
+    });
+
+    if (user?.hasCompletedTutorial) {
+      router.push("/quick-play/games?from=home");
+    } else {
+      router.push("/quick-play/tutorial");
+    }
+  };
+
+  const handleDirectAccess = () => {
+    router.push("/quick-play/games?from=home");
+  }; const getDifficultyColor = (difficulty: string) => {
     switch (difficulty.toLowerCase()) {
       case 'easy': return 'bg-green-100 text-green-800'
       case 'medium': return 'bg-yellow-100 text-yellow-800'
@@ -72,6 +103,15 @@ export default function HomePage() {
             Quick, effective mental breaks for working professionals.
             Pattern memory games that complete in exactly 5 minutes.
           </p>
+        </div>
+
+        {/* Quick Play Banner */}
+        <div className="mb-12" style={{ position: "relative", top: "calc(100vh / 3 - 200px)" }}>
+          <QuickPlayBanner
+            onTryNow={handleTryNow}
+            onDirectAccess={handleDirectAccess}
+            hasCompletedTutorial={user?.hasCompletedTutorial || false}
+          />
         </div>
 
         {/* Challenges Grid */}

@@ -120,3 +120,107 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Quick Play Banner Styles */
+.professional-design {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 24px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.workplace-suitable {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    sans-serif;
+}
+
+.full-width-promotional {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.full-width-promotional .banner-content {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.full-width-promotional h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.full-width-promotional p {
+  font-size: 1.1rem;
+  margin: 0;
+  flex: 1;
+}
+
+.condensed-promotional {
+  max-width: 100%;
+  text-align: center;
+}
+
+.condensed-promotional .banner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.condensed-promotional h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.condensed-promotional p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.compact-promotional {
+  max-width: 100%;
+  text-align: center;
+}
+
+.compact-promotional .banner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.compact-promotional h2 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.compact-promotional p {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.try-now-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 12px 24px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+.try-now-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+.compact-promotional .try-now-button {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+}
