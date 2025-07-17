@@ -112,6 +112,9 @@ it("should render Quick Play banner", () => {
 });
 ```
 
+**Run Command**: `npm test -- --testPathPatterns="QuickPlay" --verbose`
+**Expected**: Test should fail with "Cannot find module" or "Component not found"
+
 ### 2. GREEN Phase - Minimal Implementation
 
 ```typescript
@@ -120,6 +123,9 @@ export function QuickPlayBanner() {
   return <div>Quick Play</div>;
 }
 ```
+
+**Run Command**: `npm run test:watch -- --testPathPatterns="QuickPlay"`
+**Expected**: Test should now pass
 
 ### 3. REFACTOR Phase - Improve Code
 
@@ -133,6 +139,9 @@ export function QuickPlayBanner({ className }: { className?: string }) {
   );
 }
 ```
+
+**Run Command**: `npm test -- --testPathPatterns="QuickPlay" --coverage`
+**Expected**: All tests pass with good coverage
 
 ## Test Categories & When to Use
 
@@ -267,11 +276,48 @@ npm run test:watch
 # Run with coverage
 npm run test:coverage
 
-# Run specific test file
-npm test QuickPlay.test.ts
+# Run specific test file (use full filename)
+npm test QuickPlayBanner.test.tsx
 
-# Run tests matching pattern
+# Run tests in specific directory
+npm test __tests__/
+npm test components/
+
+# Run tests matching file pattern
+npm test -- --testPathPatterns="QuickPlay"
+npm test -- --testPathPatterns="integration"
+
+# Run tests matching test name pattern
 npm test -- --testNamePattern="should render"
+npm test -- --testNamePattern="banner"
+
+# Run tests in a specific file with verbose output
+npm test -- --testPathPatterns="QuickPlayBanner.test.tsx" --verbose
+
+# Run tests for TDD workflow (watch mode with coverage)
+npm run test:watch -- --coverage --testPathPatterns="QuickPlay"
+
+# Debug failing tests
+npm test -- --testPathPatterns="QuickPlay" --verbose --no-cache
+
+# Run integration tests only
+npm test -- --testPathPatterns="integration.test"
+
+# Run component tests only
+npm test -- --testPathPatterns="components/"
+```
+
+### TDD-Specific Commands
+
+```bash
+# RED Phase: Run failing tests to confirm they fail
+npm test -- --testPathPatterns="QuickPlay" --verbose
+
+# GREEN Phase: Run tests in watch mode while implementing
+npm run test:watch -- --testPathPatterns="QuickPlay"
+
+# REFACTOR Phase: Run with coverage to ensure quality
+npm test -- --testPathPatterns="QuickPlay" --coverage
 ```
 
 ### Coverage Targets
@@ -299,4 +345,123 @@ Before writing a test, ask:
 - [ ] Does the test name clearly describe the expected outcome?
 - [ ] Will this test help me catch real bugs?
 
+### TDD Command Quick Reference
+
+```bash
+# 🔴 RED: Write failing test, verify it fails
+npm test -- --testPathPatterns="[ComponentName]" --verbose
+
+# 🟢 GREEN: Write minimal code, watch tests pass
+npm run test:watch -- --testPathPatterns="[ComponentName]"
+
+# ♻️ REFACTOR: Improve code while keeping tests green
+npm test -- --testPathPatterns="[ComponentName]" --coverage
+
+# 🚀 INTEGRATION: Run both unit and integration tests
+npm test -- --testPathPatterns="[ComponentName]|integration"
+```
+
+### File Pattern Examples
+
+```bash
+# Component tests
+npm test -- --testPathPatterns="QuickPlayBanner.test.tsx"
+
+# All Quick Play related tests
+npm test -- --testPathPatterns="QuickPlay"
+
+# Integration tests only
+npm test -- --testPathPatterns="integration.test"
+
+# All tests in components directory
+npm test -- --testPathPatterns="components/"
+```
+
 Remember: **Good tests are your safety net for confident refactoring and feature development.**
+
+## Jest Troubleshooting
+
+### Common Command Issues
+
+#### Wrong Pattern Flag
+
+```bash
+# ❌ OLD WAY (deprecated)
+npm test -- --testPathPattern="QuickPlay"
+
+# ✅ CORRECT WAY
+npm test -- --testPathPatterns="QuickPlay"
+```
+
+#### File Extensions in Patterns
+
+```bash
+# ✅ Include file extensions for specificity
+npm test -- --testPathPatterns="QuickPlayBanner.test.tsx"
+npm test -- --testPathPatterns="integration.test.tsx"
+
+# ✅ Use directory patterns for broader matching
+npm test -- --testPathPatterns="components/"
+npm test -- --testPathPatterns="__tests__/"
+```
+
+#### Multiple Pattern Matching
+
+```bash
+# ✅ Use pipe separator for OR matching
+npm test -- --testPathPatterns="QuickPlay|Banner"
+npm test -- --testPathPatterns="integration|component"
+```
+
+### Debugging Test Failures
+
+#### Clear Jest Cache
+
+```bash
+npm test -- --clearCache
+```
+
+#### Run Single Test File with Full Output
+
+```bash
+npm test -- --testPathPatterns="QuickPlayBanner.test.tsx" --verbose --no-coverage
+```
+
+#### Watch Mode for TDD
+
+```bash
+# Best for development - automatically reruns on file changes
+npm run test:watch -- --testPathPatterns="QuickPlay"
+```
+
+#### Check Test Environment Setup
+
+```bash
+# Verify Jest configuration
+npm test -- --showConfig
+
+# Run with debug output
+npm test -- --testPathPatterns="QuickPlay" --verbose --detectOpenHandles
+```
+
+### Performance Optimization
+
+#### Run Tests in Parallel
+
+```bash
+# Default behavior, but can be explicitly set
+npm test -- --maxWorkers=4
+```
+
+#### Skip Coverage for Faster Development
+
+```bash
+npm test -- --testPathPatterns="QuickPlay" --no-coverage
+```
+
+#### Run Only Changed Files
+
+```bash
+npm test -- --onlyChanged
+npm test -- --watch --onlyChanged
+```
