@@ -8,7 +8,7 @@ Now let's run the E2E visual validation tests and analyze the results.
 **EXECUTION PHASE:**
 
 1. Run the Playwright E2E tests:
-   npx playwright test **tests**/e2e/${input:feature-name}.spec.js --headed
+   npx playwright test e2e/${input:feature-name}.spec.ts --headed
 
 2. After the tests complete, examine the results:
    - Review the test output for any failures
