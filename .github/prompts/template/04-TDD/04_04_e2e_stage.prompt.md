@@ -1,6 +1,7 @@
 The Red-Green-Refactor TDD cycle is now complete. Let's validate the actual frontend implementation with E2E tests.
 
 I have provided the original User Story file that was used for the TDD implementation.
+[USER_STORY]
 
 E2E VALIDATION Phase:
 
