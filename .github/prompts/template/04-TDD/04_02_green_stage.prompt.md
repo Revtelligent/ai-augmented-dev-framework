@@ -8,39 +8,26 @@ Follow the Red-Green-Refactor cycle:
 
 GREEN Phase Instructions:
 
-Write the MINIMAL implementation code needed to make ALL the failing tests pass. This includes:
+Write the MINIMAL implementation code needed to make ALL the failing tests pass.
 
 **COMPONENT IMPLEMENTATION:**
 
-- Create the component(s) with just enough functionality to pass the component-level tests
+- Create the component(s) with just enough functionality to pass tests
 - Include proper TypeScript interfaces/types
 - Handle the props and rendering logic tested
 
 **INTEGRATION IMPLEMENTATION:**
 
 - Integrate the component(s) into the application context
-- Implement the actual functionality described in the user story scenarios
-- Add any required routing, state management, or API integrations
-- Ensure performance requirements are met (if specified)
+- Implement the actual functionality from the user story scenarios
+- DO NOT create any new pages or routes or anything that is not clearly defined in the user story and in the red test.
+- Add required routing, state management, or API integrations
 
-**SUPPORTING CODE:**
-
-- Add any utilities, types, or helpers needed
-- Include necessary imports and exports
-- Set up any required context providers or configuration
-
-Focus on:
-
-- Making tests pass with the simplest possible implementation
-- Avoid over-engineering - just enough to turn tests green
-- Maintain clean, readable code structure
-- Follow established project patterns and conventions
+Focus on making tests pass with the simplest possible implementation.
 
 Show me:
 
 1. All implementation files created or modified
-2. Explanation of how each piece makes the tests pass
-3. Any assumptions made during implementation
-4. Confirmation that both component and integration tests should now pass
+2. Confirmation that both component and integration tests should now pass
 
-Do not optimize or refactor yet - we'll do that in the REFACTOR phase. The goal is minimal working code that passes all tests.
+Do not optimize yet - we'll do that in the REFACTOR phase.
