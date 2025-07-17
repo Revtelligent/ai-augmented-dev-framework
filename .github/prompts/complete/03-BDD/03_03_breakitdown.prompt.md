@@ -666,7 +666,7 @@ Your task is to parse the provided consolidated BDD scenarios document and split
 - Section breaks that clearly separate different user stories
 - Be flexible with markdown heading levels (##, ###, ####, etc.)
 - Look for story titles that follow patterns like "US-X: [Story Description]"
-- If no clear US- pattern exists, group related scenarios by logical feature boundaries
+- **IMPORTANT**: Only create .feature files for content that has explicit "US-" identifiers. Do not create files for cross-cutting scenarios, implementation guidance, or other non-user-story content.
 
 **Extract Story Content**: For each identified user story:
 
@@ -688,8 +688,8 @@ Your task is to parse the provided consolidated BDD scenarios document and split
 
 - Use placeholders for missing metadata (Priority: "TBD", Business Rationale: "See requirements document")
 - Convert malformed scenarios to valid Gherkin syntax while preserving intent
-- Make logical groupings if user story boundaries are unclear
-- Generate descriptive scenario names if missing
+- **Skip non-user-story content**: Ignore sections like "Cross-cutting Scenarios", "Implementation Guidance", "Coverage Analysis", etc.
+- If a user story is referenced but scenarios are unclear, create a placeholder file with a note
 
 </action>
 
@@ -795,7 +795,8 @@ And the user receives a download link via email
 <definition_of_done>
 **Mandatory Requirements:**
 
-- The output must contain one code block for every user story found in the input document
+- The output must contain one code block for every user story with explicit "US-X" identifier found in the input document
+- Do NOT create files for cross-cutting scenarios, implementation guidance, or other organizational content
 - Each code block must be preceded by an HTML comment specifying the filename in the format: <!-- FILENAME: [filename.feature] -->
 - Filenames must be lowercase, use underscores for spaces, and end with the .feature extension
 - The content of each code block must be valid Gherkin syntax, starting with comment block and Feature: line
@@ -814,7 +815,8 @@ And the user receives a download link via email
 
 **Validation Checklist:**
 
-- [ ] Every user story from source document has corresponding .feature file
+- [ ] Every user story with "US-X" identifier from source document has corresponding .feature file
+- [ ] No files created for cross-cutting scenarios or non-user-story content
 - [ ] All scenarios are properly grouped with their respective user stories
 - [ ] Filenames are valid, descriptive, and filesystem-safe
 - [ ] All .feature files contain syntactically correct Gherkin
