@@ -12,7 +12,15 @@ npm install
 
 ### 2. Database Setup
 
-This project uses Prisma with SQLite. Set up the database by running the following commands:
+This project uses Prisma with SQLite. Set up the database by following these steps:
+
+First, create a `.env` file in the root directory and add the database URL:
+
+```bash
+DATABASE_URL="file:./mindbreak.db"
+```
+
+Then run the following commands to set up the database:
 
 ```bash
 # Generate the Prisma client
