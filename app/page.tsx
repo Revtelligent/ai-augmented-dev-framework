@@ -106,7 +106,7 @@ export default function HomePage({ user, systemLoad }: HomePageProps) {
         </div>
 
         {/* Quick Play Banner */}
-        <div className="mb-12" style={{ position: "relative", top: "calc(100vh / 3 - 200px)" }}>
+        <div className="mb-12">
           <QuickPlayBanner
             onTryNow={handleTryNow}
             onDirectAccess={handleDirectAccess}

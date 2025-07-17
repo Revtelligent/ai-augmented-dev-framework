@@ -4,7 +4,7 @@ import { defineConfig, devices } from "@playwright/test";
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  testDir: "./__tests__/e2e",
+  testDir: "./e2e",
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -38,6 +38,18 @@ export default defineConfig({
     {
       name: "chromium",
       use: { ...devices["Desktop Chrome"] },
+    },
+
+    // Custom MacBook Chrome configuration to match local development
+    {
+      name: "MacBook Chrome",
+      use: {
+        ...devices["Desktop Chrome"],
+        viewport: { width: 1440, height: 900 }, // Common MacBook viewport
+        deviceScaleFactor: 2, // Retina display
+        userAgent:
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+      },
     },
 
     {

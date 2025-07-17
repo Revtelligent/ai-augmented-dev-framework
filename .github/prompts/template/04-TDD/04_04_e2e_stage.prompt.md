@@ -4,34 +4,40 @@ I have provided the original User Story file that was used for the TDD implement
 
 E2E VALIDATION Phase:
 
+**IMPORTANT:** This is for visual validation only. DO NOT create new components, routes, or modify existing functionality. Unit and integration tests already cover component behavior.
+
+**ASSUMPTIONS:**
+
+- All components and functionality already exist from the TDD implementation
+- You are only testing what was already built
+- If something doesn't work, report it - don't fix it in this phase
+
 **SETUP:**
 
 1. Ensure development server is running: `npm run dev`
-2. Create Playwright test: `tests/e2e/[feature-name].spec.js`
+2. Create Playwright test: `__tests__/e2e/[feature-name].spec.js`
 
 **E2E TEST REQUIREMENTS:**
-Write Playwright tests that validate each scenario from the User Story:
+Write a simple Playwright test for visual validation:
 
-- Test every Given/When/Then scenario described
-- Verify actual user interactions work as specified
-- Check visual layout and positioning requirements
-- Validate responsive behavior across device sizes
-- Confirm performance requirements are met
-- Take screenshots for visual validation
+- Load the existing page where the component is already rendered
+- Take screenshots of the current implementation
+- Verify the component appears as expected from the User Story
+- Test basic interactions only if they're core to the User Story scenarios
+- Report any visual/positioning issues found
 
 **VALIDATION APPROACH:**
 
-- Each User Story scenario should become a separate test case
-- Test real user workflows, not just component behavior
-- Verify acceptance criteria are actually met in the browser
-- Check edge cases mentioned in the scenarios
+- Focus on visual appearance and basic component presence
+- Test component renders correctly on different screen sizes
+- Verify component is accessible and positioned as expected
+- Keep tests simple - complex behavior is covered by unit tests
 
 **DELIVERABLES:**
 
-1. Complete Playwright E2E test file covering all scenarios
-2. Screenshots showing the implementation in action
-3. Test results report - pass/fail for each scenario
-4. Documentation of any issues found
+1. Simple Playwright E2E test file with visual validation
+2. Screenshots showing the component appearance across viewports
+3. Basic test results - component visibility and positioning
 
 Run: `npx playwright test tests/e2e/[feature-name].spec.js --headed`
 

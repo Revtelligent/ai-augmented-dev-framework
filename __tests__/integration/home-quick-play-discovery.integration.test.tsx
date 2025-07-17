@@ -29,6 +29,11 @@ describe("Home Page - Quick Play Discovery Integration", () => {
     it("should display Quick Play banner in upper third of home screen", async () => {
       render(<HomePage />);
 
+      // Wait for loading to complete and banner to appear
+      await waitFor(() => {
+        expect(screen.queryByText("Loading MindBreak...")).not.toBeInTheDocument();
+      });
+
       await waitFor(() => {
         const banner = screen.getByRole("banner");
         expect(banner).toBeInTheDocument();
@@ -47,6 +52,11 @@ describe("Home Page - Quick Play Discovery Integration", () => {
 
       render(<HomePage />);
 
+      // Wait for loading to complete
+      await waitFor(() => {
+        expect(screen.queryByText("Loading MindBreak...")).not.toBeInTheDocument();
+      });
+
       await waitFor(() => {
         expect(screen.getByRole("banner")).toBeInTheDocument();
         expect(screen.getByRole("button", { name: /try now/i })).toBeInTheDocument();
@@ -64,6 +74,15 @@ describe("Home Page - Quick Play Discovery Integration", () => {
 
       render(<HomePage user={mockUser} />);
 
+      // Wait for loading to complete
+      await waitFor(() => {
+        expect(screen.queryByText("Loading MindBreak...")).not.toBeInTheDocument();
+      });
+
+      await waitFor(() => {
+        expect(screen.getByRole("button", { name: /try now/i })).toBeInTheDocument();
+      });
+
       const startTime = performance.now();
 
       fireEvent.click(screen.getByRole("button", { name: /try now/i }));
@@ -78,6 +97,15 @@ describe("Home Page - Quick Play Discovery Integration", () => {
 
     it("should log banner interaction for analytics", async () => {
       render(<HomePage />);
+
+      // Wait for loading to complete
+      await waitFor(() => {
+        expect(screen.queryByText("Loading MindBreak...")).not.toBeInTheDocument();
+      });
+
+      await waitFor(() => {
+        expect(screen.getByRole("button", { name: /try now/i })).toBeInTheDocument();
+      });
 
       fireEvent.click(screen.getByRole("button", { name: /try now/i }));
 
@@ -98,6 +126,15 @@ describe("Home Page - Quick Play Discovery Integration", () => {
 
       render(<HomePage user={mockUser} />);
 
+      // Wait for loading to complete
+      await waitFor(() => {
+        expect(screen.queryByText("Loading MindBreak...")).not.toBeInTheDocument();
+      });
+
+      await waitFor(() => {
+        expect(screen.getByRole("banner")).toBeInTheDocument();
+      });
+
       const startTime = performance.now();
 
       fireEvent.click(screen.getByRole("banner"));
@@ -115,6 +152,15 @@ describe("Home Page - Quick Play Discovery Integration", () => {
 
       render(<HomePage user={mockUser} />);
 
+      // Wait for loading to complete
+      await waitFor(() => {
+        expect(screen.queryByText("Loading MindBreak...")).not.toBeInTheDocument();
+      });
+
+      await waitFor(() => {
+        expect(screen.getByRole("banner")).toBeInTheDocument();
+      });
+
       fireEvent.click(screen.getByRole("banner"));
 
       await waitFor(() => {
@@ -129,6 +175,15 @@ describe("Home Page - Quick Play Discovery Integration", () => {
       const mockSystemLoad = { concurrentUsers: 450 };
 
       render(<HomePage systemLoad={mockSystemLoad} />);
+
+      // Wait for loading to complete
+      await waitFor(() => {
+        expect(screen.queryByText("Loading MindBreak...")).not.toBeInTheDocument();
+      });
+
+      await waitFor(() => {
+        expect(screen.getByRole("button", { name: /try now/i })).toBeInTheDocument();
+      });
 
       const startTime = performance.now();
 

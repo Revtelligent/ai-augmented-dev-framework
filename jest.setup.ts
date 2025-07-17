@@ -1,5 +1,18 @@
 import "@testing-library/jest-dom";
 
+// Mock fetch API for testing
+global.fetch = jest.fn(() =>
+  Promise.resolve({
+    ok: true,
+    json: () => Promise.resolve({ challenges: [] }),
+  })
+) as jest.Mock;
+
+// Reset fetch mock before each test
+beforeEach(() => {
+  (global.fetch as jest.Mock).mockClear();
+});
+
 // Global test setup - Mock ResizeObserver
 (global as any).ResizeObserver = function ResizeObserver() {
   return {
