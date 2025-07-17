@@ -1,4 +1,6 @@
-I have provided you with a Product Requirements document (PRD). Please analyze the User Story: [STORY_NAME] and implement it using strict test-driven development.
+I have provided you with a specific User Story from our Product Requirements document.
+
+Please implement: [USER_STORY_NAME]
 
 I want to use strict test-driven development. Please write the failing test first, then we'll write code to make it pass. Do not write any implementation code until I've reviewed the test.
 
