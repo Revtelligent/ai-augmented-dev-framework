@@ -2,7 +2,32 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install Dependencies
+
+First, install the required npm packages:
+
+```bash
+npm install
+```
+
+### 2. Database Setup
+
+This project uses Prisma with SQLite. Set up the database by running the following commands:
+
+```bash
+# Generate the Prisma client
+npx prisma generate
+
+# Create the database and run migrations
+npx prisma migrate dev --name init
+
+# Seed the database with initial data
+npx tsx prisma/seed.ts
+```
+
+### 3. Run the Development Server
+
+Now you can start the development server:
 
 ```bash
 npm run dev
@@ -19,6 +44,29 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Database Management
+
+This project uses Prisma with SQLite for data persistence. The database includes:
+
+- **Challenges**: Pre-configured brain training challenges with different difficulty levels
+- **Quick Play Sessions**: User game sessions and scores
+- **Users**: User information and profiles
+
+### Useful Database Commands
+
+```bash
+# View your database in a web interface
+npx prisma studio
+
+# Reset the database (⚠️ This will delete all data)
+npx prisma migrate reset
+
+# Re-seed the database with initial challenges
+npx tsx prisma/seed.ts
+```
+
+The database file (`mindbreak.db`) will be created in your project root after running the setup commands.
 
 ## Learn More
 
