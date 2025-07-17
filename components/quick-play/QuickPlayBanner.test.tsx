@@ -7,7 +7,7 @@ describe("QuickPlayBanner", () => {
       render(<QuickPlayBanner />);
 
       expect(screen.getByRole("banner")).toBeInTheDocument();
-      expect(screen.getByText(/quick play mode/i)).toBeInTheDocument();
+      expect(screen.getByRole("heading", { name: /quick play mode/i })).toBeInTheDocument();
     });
 
     it("should display Try Now call-to-action button", () => {
@@ -22,6 +22,23 @@ describe("QuickPlayBanner", () => {
       const banner = screen.getByRole("banner");
       expect(banner).toHaveClass("professional-design");
       expect(banner).toHaveClass("workplace-suitable");
+    });
+
+    it("should include proper accessibility attributes", () => {
+      render(<QuickPlayBanner />);
+
+      const banner = screen.getByRole("banner");
+      expect(banner).toHaveAttribute("aria-label", "Quick Play Mode banner");
+
+      const button = screen.getByRole("button", { name: /try now/i });
+      expect(button).toHaveAttribute("aria-describedby", "quick-play-description");
+    });
+
+    it("should show different aria-label when tutorial is completed", () => {
+      render(<QuickPlayBanner hasCompletedTutorial={true} />);
+
+      const banner = screen.getByRole("banner");
+      expect(banner).toHaveAttribute("aria-label", "Quick Play Mode - Click to access games directly");
     });
   });
 
