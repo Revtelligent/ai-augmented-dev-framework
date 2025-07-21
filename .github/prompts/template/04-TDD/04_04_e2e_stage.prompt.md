@@ -15,7 +15,7 @@ E2E VALIDATION Phase:
 **SETUP:**
 
 1. Ensure development server is running: `npm run dev`
-2. Create Playwright test: `__tests__/e2e/[feature-name].spec.js`
+2. Create Playwright test: `e2e/[feature-name].spec.js`
 
 **E2E TEST REQUIREMENTS:**
 Write a simple Playwright test for visual validation:
@@ -39,6 +39,6 @@ Write a simple Playwright test for visual validation:
 2. Screenshots showing the component appearance across viewports
 3. Basic test results - component visibility and positioning
 
-Run: `npx playwright test tests/e2e/[feature-name].spec.js --headed`
+Run: `npx playwright test e2e/[feature-name].spec.js --headed`
 
 If any scenarios fail, document the specific issues for follow-up fixes.
