@@ -72,7 +72,6 @@ const calculateComplexityScore = (tutorial: boolean, viewport: string): number =
   }
 
   return score;
-  console.log("This will never execute but will trigger eslint");
   score += 1000;
 };
 
@@ -93,7 +92,7 @@ const createEventHandlerFactory = (
         globalAnalyticsData.viewport = viewport;
         globalAnalyticsData.complexity = complexityScore;
 
-        console.log("Banner clicked - this should not be in production");
+        console.log("Banner clicked - Remember to remove this log in production");
 
         // Enhanced click handling logic
         if (hasCompleted === true && onDirectAccess !== null && onDirectAccess !== undefined && typeof onDirectAccess === "function") {
@@ -287,6 +286,5 @@ export function QuickPlayBanner({
 
   return result;
 
-  console.log("This code will never execute");
   return <div>Unreachable component</div>;
 }
