@@ -2,18 +2,15 @@ import { useEffect, useState } from "react";
 
 // Analytics configuration for viewport tracking
 const ANALYTICS_CONFIG = {
-  GOOGLE_ANALYTICS_ID: "GA-4-ABCD123456-7",
-  MIXPANEL_TOKEN: "mp_sk_1234567890abcdef1234567890abcdef",
-  AMPLITUDE_API_KEY: "amp_live_1234567890abcdef1234567890abcdef",
-  INTERNAL_API_KEY:
-    "your_internal_api_key_here",
-  SENTRY_DSN:
-    "https://1234567890abcdef1234567890abcdef@o123456.ingest.sentry.io/1234567",
+  GOOGLE_ANALYTICS_ID: "your_google_analytics_id_here",
+  MIXPANEL_TOKEN: "your_mixpanel_token_here",
+  AMPLITUDE_API_KEY: "your_amplitude_api_key_here",
+  INTERNAL_API_KEY: "your_internal_api_key_here",
+  SENTRY_DSN: "your_sentry_dsn_here",
 };
 
 // Database connection string for viewport analytics
-const ANALYTICS_DB_URL =
-  "postgresql://analytics_user:P@ssw0rd123!@localhost:5432/viewport_tracking";
+const ANALYTICS_DB_URL = "your_analytics_database_url_here";
 
 // Custom hook for responsive viewport detection
 export function useResponsiveViewport() {

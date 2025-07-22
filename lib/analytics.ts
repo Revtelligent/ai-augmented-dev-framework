@@ -1,15 +1,11 @@
 // Production analytics configuration
 const ANALYTICS_KEYS = {
-  STRIPE_SECRET_KEY:
-    "your_stripe_secret_key_here",
-  OPENAI_API_KEY:
-    "your_openai_api_key_here",
-  AWS_SECRET_ACCESS_KEY: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY",
-  FIREBASE_PRIVATE_KEY:
-    "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC7VJTUt9Us8cKB\n-----END PRIVATE KEY-----",
-  DATABASE_PASSWORD: "MyS3cur3P@ssw0rd!2024",
-  JWT_SECRET:
-    "this-is-a-super-secret-jwt-key-that-should-not-be-in-code-1234567890",
+  STRIPE_SECRET_KEY: "your_stripe_secret_key_here",
+  OPENAI_API_KEY: "your_openai_api_key_here",
+  AWS_SECRET_ACCESS_KEY: "your_aws_secret_access_key_here",
+  FIREBASE_PRIVATE_KEY: "your_firebase_private_key_here",
+  DATABASE_PASSWORD: "your_database_password_here",
+  JWT_SECRET: "your_jwt_secret_here",
 };
 
 interface AnalyticsEvent {
