@@ -63,9 +63,6 @@ Before starting, gather:
   - Known vulnerabilities in npm packages
   - Outdated security-critical libraries
 
-**AI Prompt Example**:
-"Analyze this authentication flow for timing attacks, JWT vulnerabilities, and session fixation. Check if rate limiting is properly implemented."
-
 ### 2. Architecture & Design Patterns
 
 **Evaluate:**
@@ -89,9 +86,6 @@ Before starting, gather:
   - Shared utilities placement
   - Configuration management
 
-**AI Prompt Example**:
-"Review this feature implementation against hexagonal architecture principles. Verify proper separation between domain logic and infrastructure concerns."
-
 ### 3. Business Logic & Requirements Validation
 
 **Verify:**
@@ -108,9 +102,6 @@ Before starting, gather:
   - Input constraints per business rules
   - Output format compliance
   - Workflow state management
-
-**AI Prompt Example**:
-"This code implements [feature]. Verify it correctly handles: [list all requirements]. Identify any missing edge cases or business rule violations."
 
 ### 4. Code Quality & Maintainability
 
@@ -137,9 +128,6 @@ Before starting, gather:
   - Type documentation
   - README updates
 
-**AI Prompt Example**:
-"Evaluate this code for maintainability issues. Flag functions with cyclomatic complexity > 10, unclear naming, or missing error handling."
-
 ### 5. Performance & Optimization
 
 **Analyze:**
@@ -164,9 +152,6 @@ Before starting, gather:
   - Event listener cleanup
   - WebSocket connection handling
 
-**AI Prompt Example**:
-"Analyze these Prisma queries for N+1 problems. Suggest optimizations for handling 10K concurrent users with sub-100ms response times."
-
 ### 6. Testing & Quality Assurance
 
 **Review:**
@@ -186,9 +171,6 @@ Before starting, gather:
   - Keyboard navigation
   - Screen reader compatibility
   - Color contrast ratios
-
-**AI Prompt Example**:
-"Review test coverage for this feature. Identify missing test cases, especially for error scenarios and edge cases."
 
 ### 7. Long-term Considerations
 
